@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    scan : 自动热加载
+    scanPeriod：加载间隔 可用单位是 milliseconds，seconds，minutes 和 hours，默认单位milliseconds
+    debug: 为true时，在控制台打印出logback内部日志信息，实时查看logback运行状态。默认值为false
+
+    %ex就是指抛出的异常；
+    full是显示全部；
+    如果在{}中写入数字，则表示展示多少行；
+
+    等级排序trace < debug < info < warn < error
+-->
+<configuration scan="true" scanPeriod="30 seconds" debug="false">
+    <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS}[%thread]%-5level%logger{36}.%M %L-%msg%n"/>
+    <property name="location" value="../home/admin/jxsystem/logs/"/>
+<!--    控制台输出-->
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+<!--            输出格式-->
+            <Pattern>${pattern}</Pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+<!--            等级-->
+            <level>DEBUG</level>
+        </filter>
+    </appender>
+
+    <!--       策略（拆分）-->
+    <appender name="rollAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${location}jxsystem.log</file>
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+<!--            时间、压缩格式命名，压缩格式.gz(logback支持更好）-->
+            <fileNamePattern>${location}jxsystem.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+<!--            拆分大小为256KB 60天一滚动 最大上限512MB-->
+            <maxFileSize>256KB</maxFileSize>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>512MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+<!--    输出为html格式-->
+    <appender name="htmlAppender" class="ch.qos.logback.core.FileAppender">
+        <file>${location}jxsystem.html</file>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.classic.html.HTMLLayout">
+                <pattern>${pattern}</pattern>
+            </layout>
+        </encoder>
+        <append>false</append>
+    </appender>
+
+    <!--    异步日志(多线程实现）-->
+    <appender name="asyAppender" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref = "rollAppender"/>
+        <!--        不开启该属性则不记录当前执行日志的方法-->
+        <includeCallerData>true</includeCallerData>
+    </appender>
+
+<!--    appender都是输出源，logger才是日志记录器-->
+<!--    name:起效范围，此处指的是test包下LogBackTest类   level类似阈值过滤器    additivity：是否再抛出事件，处理完后是否再接着处理
+        如果这个属性是true，另一个logger就会在这个logger处理完后接着继续处理 -->
+    <logger name="com.ss.system.controller" level="INFO" additivity="false">
+        <appender-ref ref="consoleAppender"/>
+        <appender-ref ref="htmlAppender"/>
+        <appender-ref ref="rollAppender"/>
+    </logger>
+
+    <logger name="com.ss.system.service.impl" level="INFO" additivity="false">
+        <appender-ref ref="consoleAppender"/>
+        <appender-ref ref="htmlAppender"/>
+        <appender-ref ref="rollAppender"/>
+    </logger>
+
+<!--    以上logger没有生效时，root接管所有logger-->
+    <root level = "INFO">
+<!--        配置输出源-->
+        <appender-ref ref = "consoleAppender"/>
+        <appender-ref ref = "rollAppender"/>
+    </root>
+</configuration>
