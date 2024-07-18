@@ -11,6 +11,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
@@ -19,31 +20,52 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
-
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
- * @Description : 根据具体的 某个 Excel的文件路径，生成对应 sheet 对应数据区域的折线图保存到本地，同时也将图片展示到桌面上
- *
- * 折线图以：B 列为 X 轴 ，C列为 Y 轴 绘制一个折线图，并且折线图上标有每个点的数据 ( 小数点精确到后三位 )
+ * @Description : 在 ZheXianChart_Single 类的基础上修改为遍历整个文件夹中的某个 sheet 的某个区域的数据
  */
 
-public class ZheXianChart_Single {
+public class ZheXianChart_much {
 
     static {
         ChartFactory.setChartTheme(new StandardChartTheme("JFree/Shadow", true));
     }
 
     public static void main(String[] args) {
+        String folderPath = "C:\\Users\\32937\\Desktop\\7.12\\DataSource";
+        List<String> excelFiles = listExcelFiles(folderPath);
 
-        String fileName = "C:\\Users\\32937\\Desktop\\7.12\\DataSource\\原始数据_2120_081403.xlsx";
-        DataSetMinMax minMax = readExcelData(fileName);
-        if (minMax != null) {
-            JFreeChart lineChart = createLineChart(minMax.dataset, "zhexina_picture", "input_dBm", "output_dBm", minMax.minValue, minMax.maxValue);
-            displayChart(lineChart, "./line_chart02.png");
-        } else {
-            System.out.println("Excel 文件读取失败或数据格式不正确。");
+        for (String fileName : excelFiles) {
+            DataSetMinMax minMax = readExcelData(fileName);
+            if (minMax != null) {
+                JFreeChart lineChart = createLineChart(minMax.dataset, "Chart", "input_dBm", "output_dBm", minMax.minValue, minMax.maxValue);
+                String outputFileName = fileName.replace(".xlsx", "_chart.png");
+                displayChart(lineChart, outputFileName);
+            } else {
+                System.out.println("Excel 文件读取失败或数据格式不正确：" + fileName);
+            }
         }
+    }
+
+    private static List<String> listExcelFiles(String folderPath) {
+        List<String> excelFiles = new ArrayList<>();
+        File folder = new File(folderPath);
+        File[] files = folder.listFiles();
+
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile() && file.getName().endsWith(".xlsx")) {
+                    excelFiles.add(file.getAbsolutePath());
+                }
+            }
+        } else {
+            System.out.println("指定路径不是一个有效的文件夹：" + folderPath);
+        }
+
+        return excelFiles;
     }
 
     private static DataSetMinMax readExcelData(String fileName) {
@@ -52,9 +74,9 @@ public class ZheXianChart_Single {
         double maxValue = Double.MIN_VALUE;
         try (FileInputStream fis = new FileInputStream(new File(fileName));
              Workbook workbook = WorkbookFactory.create(fis)) {
-            Sheet sheet = workbook.getSheet("4576");
+            Sheet sheet = workbook.getSheet("4540");
             if (sheet == null) {
-                System.out.println("未找到名称为 '4576' 的 sheet 页面。");
+                System.out.println("未找到名称为 '4540' 的 sheet 页面。");
                 return null;
             }
             for (int i = sheet.getFirstRowNum() + 1; i <= sheet.getLastRowNum(); i++) {
