@@ -41,6 +41,20 @@
             <version>2.5.4</version>
         </dependency>
 
+        <!--xlsx(07)-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.17</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.3</version> <!-- 替换为你需要的版本号 -->
+        </dependency>
+
     </dependencies>
 
     <build>
