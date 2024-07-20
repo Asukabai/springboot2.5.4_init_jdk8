@@ -1,2 +1,33 @@
 server:
   port: 9090
+
+#spring:
+#  application:
+#    name: qr_code
+#  datasource: # mybatis-plus DataSource Config
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/qr_code_test?maxAllowedPacket=33554432
+#    username: root
+#    password: 123456
+#  servlet:
+#    multipart:
+#      max-file-size: 100MB
+#      max-request-size: 500MB
+#
+#server:
+#  port: 20242
+#  servlet:
+#    context-path: /ddinguia/server
+#
+#
+#mybatis-plus:
+#  type-aliases-package: com/ss/qrcode/entity
+#  global-config:
+#    db-config:
+#      field-strategy: NOT_EMPTY
+#
+#
+#file:
+#  path:
+#    windows: D:\qr_code_duct\qr_code_back\ddinguia\server\files\
+#    linux: /app/files/
