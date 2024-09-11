@@ -15,16 +15,23 @@ public class FileRenamer {
                 for (File file : files) {
                     if (file.isDirectory()) {
                         renameFiles(file); // Recursively search within subdirectories
-                    } else if (file.getName().equalsIgnoreCase("video.m4s")) {
-                        File newFile = new File(file.getParent(), "video.mp4");
-                        boolean success = file.renameTo(newFile);
-                        if (success) {
-                            System.out.println("Renamed to: " + newFile.getAbsolutePath());
-                        } else {
-                            System.out.println("Failed to rename: " + file.getAbsolutePath());
-                        }
+                    } else {
+                        renameFileIfNeeded(file, "video.m4s", "video.mp4");
+                        renameFileIfNeeded(file, "audio.m4s", "audio.mp3");
                     }
                 }
+            }
+        }
+    }
+
+    private static void renameFileIfNeeded(File file, String oldName, String newName) {
+        if (file.getName().equalsIgnoreCase(oldName)) {
+            File newFile = new File(file.getParent(), newName);
+            boolean success = file.renameTo(newFile);
+            if (success) {
+                System.out.println("Renamed to: " + newFile.getAbsolutePath());
+            } else {
+                System.out.println("Failed to rename: " + file.getAbsolutePath());
             }
         }
     }
