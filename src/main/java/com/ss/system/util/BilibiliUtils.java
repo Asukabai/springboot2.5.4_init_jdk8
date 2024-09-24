@@ -4,6 +4,8 @@ import com.google.gson.JsonParser;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 
 
@@ -64,22 +66,23 @@ public class BilibiliUtils {
         }
     }
 
+
     private static void searchAndRenameFiles(File startDir, String newBaseName) {
         File[] files = startDir.listFiles();
         if (files != null) {
             for (File file : files) {
                 if (file.isDirectory()) {
-                    // Recursively search in subdirectories
                     searchAndRenameFiles(file, newBaseName);
                 } else if (file.getName().equalsIgnoreCase("video.m4s")) {
                     renameFileIfNeeded(file, newBaseName + ".mp4");
                 } else if (file.getName().equalsIgnoreCase("audio.m4s")) {
                     renameFileIfNeeded(file, newBaseName + ".mp3");
+                } else if (file.getName().toLowerCase().endsWith(".mp3")) {
+                    copyMp3File(file);
                 }
             }
         }
     }
-
     private static void renameFileIfNeeded(File file, String newName) {
         if (file.exists()) {
             File newFile = new File(file.getParent(), newName);
@@ -91,6 +94,20 @@ public class BilibiliUtils {
             }
         } else {
             System.out.println("File not found: " + file.getAbsolutePath());
+        }
+    }
+
+    private static void copyMp3File(File mp3File) {
+        File destDir = new File("D:\\UP");
+        if (!destDir.exists()) {
+            destDir.mkdirs();
+        }
+        File destFile = new File(destDir, mp3File.getName());
+        try {
+            Files.copy(mp3File.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("Copied: " + mp3File.getAbsolutePath() + " to " + destFile.getAbsolutePath());
+        } catch (IOException e) {
+            System.out.println("Failed to copy: " + mp3File.getAbsolutePath() + " - " + e.getMessage());
         }
     }
 }
