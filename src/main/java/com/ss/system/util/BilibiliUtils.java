@@ -39,11 +39,19 @@ public class BilibiliUtils {
                 JsonObject jsonObject = JsonParser.parseString(jsonString).getAsJsonObject();
                 // 获取 owner_name
                 String ownerName = jsonObject.get("owner_name") != null ? jsonObject.get("owner_name").getAsString() : "";
+                // 获取 download_subtitle
+                String downloadSubtitle = jsonObject.getAsJsonObject("page_data").get("download_subtitle") != null
+                        ? jsonObject.getAsJsonObject("page_data").get("download_subtitle").getAsString()
+                        : "";
                 // 获取 part
                 String part = jsonObject.getAsJsonObject("page_data").get("part") != null
                         ? jsonObject.getAsJsonObject("page_data").get("part").getAsString()
                         : "";
                 // 判空逻辑
+                if (downloadSubtitle.isEmpty()) {
+                    System.out.println("Warning: download_subtitle is empty.");
+                    downloadSubtitle = "Unknown_Title"; // 可以设置默认值
+                }
                 if (ownerName.isEmpty()) {
                     System.out.println("Warning: owner_name is empty.");
                     ownerName = "Unknown_Owner"; // 可以设置默认值
@@ -53,7 +61,7 @@ public class BilibiliUtils {
                     part = "Unknown_Part"; // 可以设置默认值
                 }
                 // 构造新的文件名
-                String newBaseName = ownerName + " - " + part;
+                String newBaseName = downloadSubtitle + " - " + ownerName + " - " + part;
                 System.out.println("New base name: " + newBaseName);
                 // 重命名文件
                 searchAndRenameFiles(jsonDir, newBaseName);
