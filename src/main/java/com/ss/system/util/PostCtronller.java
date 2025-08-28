@@ -1,6 +1,7 @@
 package com.ss.system.util;
 
 
+import com.ss.system.common.dto.RespondDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,6 +14,7 @@ import java.net.URL;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
+import java.util.Random;
 
 
 /**
@@ -27,6 +29,81 @@ import java.io.InputStreamReader;
 @CrossOrigin
 @RequestMapping("/ssmonitor/server/liuchengtu")
 public class PostCtronller {
+
+//    public static RespondDto<Object[][]> generateRandomTableData() {
+//        Random random = new Random();
+//        String[] channels = {"key1", "key2", "key3", "key4", "key5", "key6", "key7", "key8", "key9", "key10", "key11", "key12"};
+//        String[] aliases = {"value1", "value2", "value3", "value4", "value5", "value6", "value7", "value8", "value9", "value10", "value11", "value12"};
+//
+//        Object[][] data = new Object[12][10];
+//        for (int i = 0; i < 12; i++) {
+//            data[i][0] = channels[i]; // 通道
+//            data[i][1] = aliases[i];  // 通道别名
+//            // 状态：0, 1, 2, 3
+//            data[i][2] = random.nextInt(4);
+//            // 输出：true/false
+//            data[i][3] = random.nextBoolean();
+//            // 使能：true/false
+//            data[i][4] = random.nextBoolean();
+//            // 设置电流A：0.1 ~ 10.0 A
+//            data[i][5] = String.format("%.2f", random.nextDouble() * 10 + 0.1);
+//            // 采样电流A：0.05 ~ 12.0 A
+//            data[i][6] = String.format("%.2f", random.nextDouble() * 12 + 0.05);
+//            // 采样电压V：0.5 ~ 30 V
+//            data[i][7] = String.format("%.2f", random.nextDouble() * 30 + 0.5);
+//            // 功率W：0.1 ~ 300 W
+//            data[i][8] = String.format("%.2f", random.nextDouble() * 300 + 0.1);
+//            // 负载保护：0, 1, 2（表示无/警告/故障）
+//            data[i][9] = random.nextInt(3);
+//        }
+////        return data;
+//        // 使用 RespondDto 封装数据
+//        return new RespondDto<>(data);
+//    }
+
+
+
+
+    /**
+     * 生成随机表格数据，并确保所有内容均为字符串类型
+     */
+    public static RespondDto<Object[][]> generateRandomTableData() {
+        Random random = new Random();
+        String[] channels = {"key1", "key2", "key3", "key4", "key5", "key6", "key7", "key8", "key9", "key10", "key11", "key12"};
+        String[] aliases = {"value1", "value2", "value3", "value4", "value5", "value6", "value7", "value8", "value9", "value10", "value11", "value12"};
+
+        Object[][] data = new Object[12][10];
+        for (int i = 0; i < 12; i++) {
+            data[i][0] = channels[i]; // 通道：String
+            data[i][1] = aliases[i];  // 通道别名：String
+            // 状态：0, 1, 2, 3 → 转为字符串
+            data[i][2] = String.valueOf(random.nextInt(4));
+            // 输出：true/false → 转为字符串
+            data[i][3] = String.valueOf(random.nextBoolean());
+            // 使能：true/false → 转为字符串
+            data[i][4] = String.valueOf(random.nextBoolean());
+            // 设置电流A：0.1 ~ 10.0 A → 已经是字符串格式
+            data[i][5] = String.format("%.2f", random.nextDouble() * 10 + 0.1);
+            // 采样电流A：0.05 ~ 12.0 A → 已经是字符串格式
+            data[i][6] = String.format("%.2f", random.nextDouble() * 12 + 0.05);
+            // 采样电压V：0.5 ~ 30 V → 已经是字符串格式
+            data[i][7] = String.format("%.2f", random.nextDouble() * 30 + 0.5);
+            // 功率W：0.1 ~ 300 W → 已经是字符串格式
+            data[i][8] = String.format("%.2f", random.nextDouble() * 300 + 0.1);
+            // 负载保护：0, 1, 2（表示无/警告/故障）→ 转为字符串
+            data[i][9] = String.valueOf(random.nextInt(3));
+        }
+
+        // 使用 RespondDto 封装数据
+        return new RespondDto<>(data);
+    }
+
+
+    @RequestMapping(value = "table", method = {RequestMethod.GET, RequestMethod.POST})
+    public RespondDto<Object[][]> getTableData() {
+        return generateRandomTableData();
+    }
+
 
     @RequestMapping(value = "upload", method = {RequestMethod.GET, RequestMethod.POST})
 
