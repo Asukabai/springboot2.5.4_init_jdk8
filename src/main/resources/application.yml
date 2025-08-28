@@ -1,5 +1,16 @@
 server:
-  port: 9090
+  port: 9091
+
+
+# 串口配置
+serial:
+  port:
+    name: COM3
+    baud-rate: 9600
+    data-bits: 8
+    stop-bits: 1
+    parity: none
+
 
 #spring:
 #  application:
