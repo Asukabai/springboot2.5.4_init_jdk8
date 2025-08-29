@@ -1,0 +1,778 @@
+{
+  "reqData": {
+    "clientId": "wHxPF81D7FnA&U-MbTKMFk",
+    "data": {
+      "nodes": [{
+        "id": "0ebc18f4-7d92-4eb1-96e8-7f8434de5892",
+        "type": "start",
+        "x": 140,
+        "y": 100,
+        "properties": {
+          "state": 1
+        }
+      }, {
+        "id": "5f288869-9698-4203-b796-d584d2f9ed77",
+        "type": "rect",
+        "x": 320,
+        "y": 100,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 260,
+            "y": 120
+          }
+        },
+        "text": {
+          "x": 320,
+          "y": 100,
+          "value": "关闭电源并\n设置输出电流10A"
+        }
+      }, {
+        "id": "f2bf8d66-17e9-45f1-8935-b4b3a527aab0",
+        "type": "rect",
+        "x": 500,
+        "y": 100,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 540,
+            "y": 120
+          }
+        },
+        "text": {
+          "x": 500,
+          "y": 100,
+          "value": "关闭负载\n1-12通道使能"
+        }
+      }, {
+        "id": "797e8b3a-49aa-49d1-9401-3502c07fc0c9",
+        "type": "rect",
+        "x": 700,
+        "y": 100,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 680,
+            "y": 120
+          }
+        },
+        "text": {
+          "x": 700,
+          "y": 100,
+          "value": "设置负载\n1-12通道0A电流"
+        }
+      }, {
+        "id": "8d0a7223-19cc-4e9a-bc2d-1ec0c0c48409",
+        "type": "rect",
+        "x": 900,
+        "y": 100,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 820,
+            "y": 120
+          }
+        },
+        "text": {
+          "x": 900,
+          "y": 100,
+          "value": "开启负载\n1-12通道输出"
+        }
+      }, {
+        "id": "379ca29d-8481-4463-9d5b-50be6c6741d2",
+        "type": "rect",
+        "x": 1100,
+        "y": 100,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 1120,
+            "y": 120
+          }
+        },
+        "text": {
+          "x": 1100,
+          "y": 100,
+          "value": "设置电源\n输出电压5V"
+        }
+      }, {
+        "id": "26ec8724-dc7d-484b-b0b9-4906cc241727",
+        "type": "rect",
+        "x": 1300,
+        "y": 100,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 1280,
+            "y": 120
+          }
+        },
+        "text": {
+          "x": 1300,
+          "y": 100,
+          "value": "开启电源输出"
+        }
+      }, {
+        "id": "4b9f7185-a074-4d41-a5d6-4ca66bee3a6b",
+        "type": "rect",
+        "x": 1300,
+        "y": 260,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 1280,
+            "y": 240
+          }
+        },
+        "text": {
+          "x": 1300,
+          "y": 260,
+          "value": "采集负载1-12\n通道空载(0A)电压"
+        }
+      }, {
+        "id": "b508c0fa-3628-4d19-8661-99c52f7675eb",
+        "type": "rect",
+        "x": 1100,
+        "y": 260,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 960,
+            "y": 240
+          }
+        },
+        "text": {
+          "x": 1100,
+          "y": 260,
+          "value": "读取电源电流"
+        }
+      }, {
+        "id": "6f9c274a-cb68-4476-a3b4-e2f1b1be4c78",
+        "type": "rect",
+        "x": 900,
+        "y": 260,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 820,
+            "y": 240
+          }
+        },
+        "text": {
+          "x": 900,
+          "y": 260,
+          "value": "设置电源\n输出电压7V"
+        }
+      }, {
+        "id": "356a5888-4363-445b-a747-57228a3037fe",
+        "type": "rect",
+        "x": 700,
+        "y": 260,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 680,
+            "y": 240
+          }
+        },
+        "text": {
+          "x": 700,
+          "y": 260,
+          "value": "采集负载1-12\n通道空载(0A)电压"
+        }
+      }, {
+        "id": "6da74fd2-9459-496d-b928-5b5d702d4367",
+        "type": "rect",
+        "x": 500,
+        "y": 260,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 400,
+            "y": 240
+          }
+        },
+        "text": {
+          "x": 500,
+          "y": 260,
+          "value": "设置负载1-12\n通道电流共9A"
+        }
+      }, {
+        "id": "30bb7784-e8cb-412a-b241-6a4f4a08e061",
+        "type": "rect",
+        "x": 320,
+        "y": 260,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 140,
+            "y": 240
+          }
+        },
+        "text": {
+          "x": 320,
+          "y": 260,
+          "value": "读取电源电流"
+        }
+      }, {
+        "id": "789d53b5-507a-4337-940e-9a3d1ebab16b",
+        "type": "rect",
+        "x": 140,
+        "y": 260,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 400,
+            "y": 380
+          }
+        },
+        "text": {
+          "x": 140,
+          "y": 260,
+          "value": "采集负载1-12\n通道带载(9A)电压"
+        }
+      }, {
+        "id": "bc863a68-4cd8-45fc-8881-1863f23774aa",
+        "type": "rect",
+        "x": 140,
+        "y": 420,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 540,
+            "y": 380
+          }
+        },
+        "text": {
+          "x": 140,
+          "y": 420,
+          "value": "设置电源\n输出电压5V"
+        }
+      }, {
+        "id": "a7f5fb76-bd4a-405c-91f8-302ce0d4a37e",
+        "type": "rect",
+        "x": 320,
+        "y": 420,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 680,
+            "y": 380
+          }
+        },
+        "text": {
+          "x": 320,
+          "y": 420,
+          "value": "采集负载1-12\n通道带载(9A)电压"
+        }
+      }, {
+        "id": "0dbe90b3-7beb-451e-917b-6be637ce8b7a",
+        "type": "rect",
+        "x": 500,
+        "y": 420,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 820,
+            "y": 380
+          }
+        },
+        "text": {
+          "x": 500,
+          "y": 420,
+          "value": "读取电源电流"
+        }
+      }, {
+        "id": "c23ee22a-4a07-4253-b301-5217c867f154",
+        "type": "rect",
+        "x": 700,
+        "y": 420,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 680,
+            "y": 400
+          }
+        },
+        "text": {
+          "x": 700,
+          "y": 420,
+          "value": "关闭电源并\n设置输出电流0A"
+        }
+      }, {
+        "id": "662ca8dd-04b8-4466-b885-836f05b7098a",
+        "type": "rect",
+        "x": 900,
+        "y": 420,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 880,
+            "y": 400
+          }
+        },
+        "text": {
+          "x": 900,
+          "y": 420,
+          "value": "设置负载1-12\n通道0A电流"
+        }
+      }, {
+        "id": "55c08bb0-5adf-418a-baeb-2c0ca084dbab",
+        "type": "rect",
+        "x": 1100,
+        "y": 420,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 1080,
+            "y": 400
+          }
+        },
+        "text": {
+          "x": 1100,
+          "y": 420,
+          "value": "关闭负载\n1-12通道输出"
+        }
+      }, {
+        "id": "fd13b583-11b0-48a8-b443-efe6f3a77b6b",
+        "type": "end",
+        "x": 1320,
+        "y": 420,
+        "properties": {
+          "state": 1,
+          "copyXY": {
+            "x": 1280,
+            "y": 400
+          }
+        },
+        "text": {
+          "x": 1320,
+          "y": 420,
+          "value": "结束"
+        }
+      }],
+      "edges": [{
+        "id": "5e51ed3c-846c-42c2-be10-5f645aaa1b1d",
+        "type": "polyline",
+        "sourceNodeId": "0ebc18f4-7d92-4eb1-96e8-7f8434de5892",
+        "targetNodeId": "5f288869-9698-4203-b796-d584d2f9ed77",
+        "startPoint": {
+          "x": 180,
+          "y": 100
+        },
+        "endPoint": {
+          "x": 270,
+          "y": 100
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 180,
+          "y": 100
+        }, {
+          "x": 270,
+          "y": 100
+        }]
+      }, {
+        "id": "bebf88e7-9125-4918-9223-331f90da2460",
+        "type": "polyline",
+        "sourceNodeId": "5f288869-9698-4203-b796-d584d2f9ed77",
+        "targetNodeId": "f2bf8d66-17e9-45f1-8935-b4b3a527aab0",
+        "startPoint": {
+          "x": 370,
+          "y": 100
+        },
+        "endPoint": {
+          "x": 450,
+          "y": 100
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 370,
+          "y": 100
+        }, {
+          "x": 450,
+          "y": 100
+        }]
+      }, {
+        "id": "bb33bfa6-3198-47af-9231-be5b2d8075b0",
+        "type": "polyline",
+        "sourceNodeId": "f2bf8d66-17e9-45f1-8935-b4b3a527aab0",
+        "targetNodeId": "797e8b3a-49aa-49d1-9401-3502c07fc0c9",
+        "startPoint": {
+          "x": 550,
+          "y": 100
+        },
+        "endPoint": {
+          "x": 650,
+          "y": 100
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 550,
+          "y": 100
+        }, {
+          "x": 650,
+          "y": 100
+        }]
+      }, {
+        "id": "f7d4e7ef-8817-424f-a492-fb85a19ae139",
+        "type": "polyline",
+        "sourceNodeId": "797e8b3a-49aa-49d1-9401-3502c07fc0c9",
+        "targetNodeId": "8d0a7223-19cc-4e9a-bc2d-1ec0c0c48409",
+        "startPoint": {
+          "x": 750,
+          "y": 100
+        },
+        "endPoint": {
+          "x": 850,
+          "y": 100
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 750,
+          "y": 100
+        }, {
+          "x": 850,
+          "y": 100
+        }]
+      }, {
+        "id": "a36c8ec6-2f06-49d1-a826-ed15dd0cd35b",
+        "type": "polyline",
+        "sourceNodeId": "8d0a7223-19cc-4e9a-bc2d-1ec0c0c48409",
+        "targetNodeId": "379ca29d-8481-4463-9d5b-50be6c6741d2",
+        "startPoint": {
+          "x": 950,
+          "y": 100
+        },
+        "endPoint": {
+          "x": 1050,
+          "y": 100
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 950,
+          "y": 100
+        }, {
+          "x": 1050,
+          "y": 100
+        }]
+      }, {
+        "id": "af290edc-d5d9-4db0-9226-026b7f100c3c",
+        "type": "polyline",
+        "sourceNodeId": "379ca29d-8481-4463-9d5b-50be6c6741d2",
+        "targetNodeId": "26ec8724-dc7d-484b-b0b9-4906cc241727",
+        "startPoint": {
+          "x": 1150,
+          "y": 100
+        },
+        "endPoint": {
+          "x": 1250,
+          "y": 100
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 1150,
+          "y": 100
+        }, {
+          "x": 1250,
+          "y": 100
+        }]
+      }, {
+        "id": "b2359cc8-87ea-4d67-be7d-a1a68bee04e6",
+        "type": "polyline",
+        "sourceNodeId": "26ec8724-dc7d-484b-b0b9-4906cc241727",
+        "targetNodeId": "4b9f7185-a074-4d41-a5d6-4ca66bee3a6b",
+        "startPoint": {
+          "x": 1300,
+          "y": 140
+        },
+        "endPoint": {
+          "x": 1300,
+          "y": 220
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 1300,
+          "y": 140
+        }, {
+          "x": 1300,
+          "y": 220
+        }]
+      }, {
+        "id": "11ad3b57-0cfa-42cd-b329-589905c075ba",
+        "type": "polyline",
+        "sourceNodeId": "4b9f7185-a074-4d41-a5d6-4ca66bee3a6b",
+        "targetNodeId": "b508c0fa-3628-4d19-8661-99c52f7675eb",
+        "startPoint": {
+          "x": 1250,
+          "y": 260
+        },
+        "endPoint": {
+          "x": 1150,
+          "y": 260
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 1250,
+          "y": 260
+        }, {
+          "x": 1150,
+          "y": 260
+        }]
+      }, {
+        "id": "0dc6d9ae-b9b4-4dfe-8fe6-25818962bf7d",
+        "type": "polyline",
+        "sourceNodeId": "b508c0fa-3628-4d19-8661-99c52f7675eb",
+        "targetNodeId": "6f9c274a-cb68-4476-a3b4-e2f1b1be4c78",
+        "startPoint": {
+          "x": 1050,
+          "y": 260
+        },
+        "endPoint": {
+          "x": 950,
+          "y": 260
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 1050,
+          "y": 260
+        }, {
+          "x": 950,
+          "y": 260
+        }]
+      }, {
+        "id": "b73292bc-5f7c-4c71-ab44-6ea27bce9be6",
+        "type": "polyline",
+        "sourceNodeId": "6f9c274a-cb68-4476-a3b4-e2f1b1be4c78",
+        "targetNodeId": "356a5888-4363-445b-a747-57228a3037fe",
+        "startPoint": {
+          "x": 850,
+          "y": 260
+        },
+        "endPoint": {
+          "x": 750,
+          "y": 260
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 850,
+          "y": 260
+        }, {
+          "x": 750,
+          "y": 260
+        }]
+      }, {
+        "id": "74803949-efcf-49df-909a-52656fc335ba",
+        "type": "polyline",
+        "sourceNodeId": "356a5888-4363-445b-a747-57228a3037fe",
+        "targetNodeId": "6da74fd2-9459-496d-b928-5b5d702d4367",
+        "startPoint": {
+          "x": 650,
+          "y": 260
+        },
+        "endPoint": {
+          "x": 550,
+          "y": 260
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 650,
+          "y": 260
+        }, {
+          "x": 550,
+          "y": 260
+        }]
+      }, {
+        "id": "05cef68b-a759-492e-bcb2-72269161998f",
+        "type": "polyline",
+        "sourceNodeId": "6da74fd2-9459-496d-b928-5b5d702d4367",
+        "targetNodeId": "30bb7784-e8cb-412a-b241-6a4f4a08e061",
+        "startPoint": {
+          "x": 450,
+          "y": 260
+        },
+        "endPoint": {
+          "x": 370,
+          "y": 260
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 450,
+          "y": 260
+        }, {
+          "x": 370,
+          "y": 260
+        }]
+      }, {
+        "id": "2ad914d9-29f5-4b09-b068-0beffaab39a1",
+        "type": "polyline",
+        "sourceNodeId": "30bb7784-e8cb-412a-b241-6a4f4a08e061",
+        "targetNodeId": "789d53b5-507a-4337-940e-9a3d1ebab16b",
+        "startPoint": {
+          "x": 270,
+          "y": 260
+        },
+        "endPoint": {
+          "x": 190,
+          "y": 260
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 270,
+          "y": 260
+        }, {
+          "x": 190,
+          "y": 260
+        }]
+      }, {
+        "id": "d87f4823-5d57-4699-94dc-914775656f41",
+        "type": "polyline",
+        "sourceNodeId": "789d53b5-507a-4337-940e-9a3d1ebab16b",
+        "targetNodeId": "bc863a68-4cd8-45fc-8881-1863f23774aa",
+        "startPoint": {
+          "x": 140,
+          "y": 300
+        },
+        "endPoint": {
+          "x": 140,
+          "y": 380
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 140,
+          "y": 300
+        }, {
+          "x": 140,
+          "y": 380
+        }]
+      }, {
+        "id": "6ec652e8-07c6-412f-b1c2-67c5af198de3",
+        "type": "polyline",
+        "sourceNodeId": "bc863a68-4cd8-45fc-8881-1863f23774aa",
+        "targetNodeId": "a7f5fb76-bd4a-405c-91f8-302ce0d4a37e",
+        "startPoint": {
+          "x": 190,
+          "y": 420
+        },
+        "endPoint": {
+          "x": 270,
+          "y": 420
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 190,
+          "y": 420
+        }, {
+          "x": 270,
+          "y": 420
+        }]
+      }, {
+        "id": "dad32a64-14cf-4826-a879-eb6b1d133307",
+        "type": "polyline",
+        "sourceNodeId": "a7f5fb76-bd4a-405c-91f8-302ce0d4a37e",
+        "targetNodeId": "0dbe90b3-7beb-451e-917b-6be637ce8b7a",
+        "startPoint": {
+          "x": 370,
+          "y": 420
+        },
+        "endPoint": {
+          "x": 450,
+          "y": 420
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 370,
+          "y": 420
+        }, {
+          "x": 450,
+          "y": 420
+        }]
+      }, {
+        "id": "eaacd83e-1fe6-4cc6-8313-99c8b1613aee",
+        "type": "polyline",
+        "sourceNodeId": "0dbe90b3-7beb-451e-917b-6be637ce8b7a",
+        "targetNodeId": "c23ee22a-4a07-4253-b301-5217c867f154",
+        "startPoint": {
+          "x": 550,
+          "y": 420
+        },
+        "endPoint": {
+          "x": 650,
+          "y": 420
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 550,
+          "y": 420
+        }, {
+          "x": 650,
+          "y": 420
+        }]
+      }, {
+        "id": "3b6565d8-3450-47fb-b9b8-200deac8a507",
+        "type": "polyline",
+        "sourceNodeId": "c23ee22a-4a07-4253-b301-5217c867f154",
+        "targetNodeId": "662ca8dd-04b8-4466-b885-836f05b7098a",
+        "startPoint": {
+          "x": 750,
+          "y": 420
+        },
+        "endPoint": {
+          "x": 850,
+          "y": 420
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 750,
+          "y": 420
+        }, {
+          "x": 850,
+          "y": 420
+        }]
+      }, {
+        "id": "f589db3f-2402-49cb-9944-cbf250090a58",
+        "type": "polyline",
+        "sourceNodeId": "662ca8dd-04b8-4466-b885-836f05b7098a",
+        "targetNodeId": "55c08bb0-5adf-418a-baeb-2c0ca084dbab",
+        "startPoint": {
+          "x": 950,
+          "y": 420
+        },
+        "endPoint": {
+          "x": 1050,
+          "y": 420
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 950,
+          "y": 420
+        }, {
+          "x": 1050,
+          "y": 420
+        }]
+      }, {
+        "id": "1963cefe-69e5-4b0f-b742-2281f5cca3de",
+        "type": "polyline",
+        "sourceNodeId": "55c08bb0-5adf-418a-baeb-2c0ca084dbab",
+        "targetNodeId": "fd13b583-11b0-48a8-b443-efe6f3a77b6b",
+        "startPoint": {
+          "x": 1150,
+          "y": 420
+        },
+        "endPoint": {
+          "x": 1280,
+          "y": 420
+        },
+        "properties": {},
+        "pointsList": [{
+          "x": 1150,
+          "y": 420
+        }, {
+          "x": 1280,
+          "y": 420
+        }]
+      }],
+      "id": "v10ktJyZa"
+    }
+  }
+}
