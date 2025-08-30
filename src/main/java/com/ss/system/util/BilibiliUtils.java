@@ -143,9 +143,9 @@ public class BilibiliUtils {
                 System.out.println("New base name: " + newBaseName);
                 // 重命名文件
                 searchAndRenameFiles(jsonDir, newBaseName);
-                // 复制MP3文件
-                copyMp3Files(jsonDir);
-                copyMp4Files(jsonDir); // 新增：复制 MP4 文件
+                // 复制 MP3 和 MP4 文件
+                copyFilesByExtension(jsonDir, ".mp3"); // 复制 MP3 文件
+                copyFilesByExtension(jsonDir, ".mp4"); // 复制 MP4 文件
             } catch (IOException e) {
                 System.out.println("Failed to read or process JSON file: " + e.getMessage());
             }
@@ -154,13 +154,14 @@ public class BilibiliUtils {
         }
     }
 
-    private static void copyMp4Files(File startDir) { // 新增：复制 MP4 文件
+
+    private static void copyFilesByExtension(File startDir, String extension) { // 通用方法：根据扩展名复制文件
         File[] files = startDir.listFiles();
         if (files != null) {
             for (File file : files) {
                 if (file.isDirectory()) {
-                    copyMp4Files(file); // 递归调用处理子目录
-                } else if (file.getName().toLowerCase().endsWith(".mp4")) {
+                    copyFilesByExtension(file, extension); // 递归调用处理子目录
+                } else if (file.getName().toLowerCase().endsWith(extension)) { // 匹配指定扩展名
                     copyFileToDestination(file); // 调用通用复制方法
                 }
             }
@@ -209,32 +210,5 @@ public class BilibiliUtils {
             System.out.println("File not found: " + file.getAbsolutePath()); // 如果文件不存在，输出提示
         }
     }
-
-    private static void copyMp3Files(File startDir) {// 定义复制 MP3 文件的方法
-        File[] files = startDir.listFiles(); // 获取目录下的所有文件和子目录
-        if (files != null) {// 如果文件数组不为空
-            for (File file : files) {// 遍历每个文件/目录
-                if (file.isDirectory()) {// 如果是子目录
-                    copyMp3Files(file);// 递归调用处理子目录
-                } else if (file.getName().toLowerCase().endsWith(".mp3")) {// 如果是 MP3 文件
-                    copyFileToDestination(file); // 调用通用复制方法
-                }
-            }
-        }
-    }
-
-//    private static void copyMp3File(File mp3File) {// 定义复制单个 MP3 文件的方法
-//        File destDir = new File("D:\\UP"); // 定义目标目录路径
-//        if (!destDir.exists()) {// 如果目标目录不存在
-//            destDir.mkdirs();// 创建目标目录
-//        }
-//        File destFile = new File(destDir, mp3File.getName()); // 构造目标文件路径
-//        try {
-//            Files.copy(mp3File.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);// 复制文件并覆盖已有文件
-//            System.out.println("Copied: " + mp3File.getAbsolutePath() + " to " + destFile.getAbsolutePath());
-//        } catch (IOException e) {
-//            System.out.println("Failed to copy: " + mp3File.getAbsolutePath() + " - " + e.getMessage());
-//        }
-//    }
 }
 
