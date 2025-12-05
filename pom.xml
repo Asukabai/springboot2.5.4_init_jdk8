@@ -89,6 +89,14 @@
             <systemPath>${project.basedir}/src/main/resources/lib/RXTXcomm.jar</systemPath>
         </dependency>
 
+        <dependency>
+            <groupId>com.ss</groupId>
+            <artifactId>excel</artifactId>
+            <version>2.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/sensor-excel-0.0.1-SNAPSHOT-jar-with-dependencies.jar</systemPath>
+        </dependency>
+
 
         <dependency>
             <groupId>org.jfree</groupId>
