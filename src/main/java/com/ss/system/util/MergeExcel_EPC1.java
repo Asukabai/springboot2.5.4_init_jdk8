@@ -33,9 +33,28 @@ public class MergeExcel_EPC1 {
             for (Cell cell : row) {
                 if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
                     String cellValue = cell.getStringCellValue();
-                    if (cellValue != null & cellValue.trim().equals(searchText)) {
+//                    if (cellValue != null & cellValue.trim().equals(searchText)) {
+//                        return cell;
+//                    }
+//当 cellValue 为 null 时，使用单个 & 操作符仍会执行 cellValue.trim().equals(searchText)
+//调用 null.trim() 会抛出
+//                    && 是短路逻辑与运算符
+//  如果第一个操作数为false，就不会计算第二个操作数
+//  这种短路特性可以提高性能并避免不必要的计算
+//  & 是按位与运算符，也可以用作逻辑与
+//  即使第一个操作数为false，也会计算第二个操作数
+//  不具备短路特性，会执行所有操作数的计算
+                    // 方式1：使用短路逻辑运算符（推荐）
+                    if (cellValue != null && cellValue.trim().equals(searchText)) {
                         return cell;
                     }
+
+                    // 方式2：分离判断逻辑
+//                    if (cellValue != null) {
+//                        if (cellValue.trim().equals(searchText)) {
+//                            return cell;
+//                        }
+//                    }
                 } else if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
                     // 如果是数字格式，转换为字符串查找
                     String cellValue = String.valueOf(cell.getNumericCellValue());
